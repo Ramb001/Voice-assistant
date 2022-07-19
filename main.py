@@ -1,5 +1,5 @@
 import speech_recognition
-from commands import openVk, openYoutube, playMusic, greeting, screenshot
+from commands import openVk, openYoutube, playMusic, greeting, screenshot, nowTime
 
 
 sr = speech_recognition.Recognizer()
@@ -12,7 +12,8 @@ commandsDict = {
         'openVk' : ['открой вк', 'включи вк', 'включи vk', 'открой vk'],
         'openYoutube': ['открой youtube', 'включи youtube'],
         'greeting': ['привет', 'здарова', 'добрый день'],
-        'screenshot' : ['сделай скриншот', 'сделай фото экрана']
+        'screenshot' : ['сделай скриншот', 'сделай фото экрана'],
+        'nowTime' : ['какое сейчас время', 'сколько время']
     }
 }
 
