@@ -1,6 +1,6 @@
 import os
 import pyttsx3
-import time
+import time, datetime
 from subprocess import call
 
 
@@ -36,3 +36,9 @@ def screenshot():
     localTime = time.localtime()
     timeString = time.strftime("%H:%M:%S", localTime)
     call(['screencapture', f'screenshot{timeString}.png'])
+    
+
+def nowTime():
+    now = datetime.datetime.now()
+    answer = 'Current time is %d hours %d minutes' % (now.hour, now.minute)
+    speak(answer)
