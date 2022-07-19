@@ -1,5 +1,7 @@
 import os
 import pyttsx3
+import time
+from subprocess import call
 
 
 speakEngine = pyttsx3.init()
@@ -28,3 +30,9 @@ def speak(what):
 
 def greeting():
     speak("Hi! I'm glad to see you")
+    
+
+def screenshot():
+    localTime = time.localtime()
+    timeString = time.strftime("%H:%M:%S", localTime)
+    call(['screencapture', f'screenshot{timeString}.png'])
