@@ -1,10 +1,30 @@
 import os
+import pyttsx3
+
+
+speakEngine = pyttsx3.init()
+voices = speakEngine.getProperty('voices')
+speakEngine.setProperty('voice', voices[10].id)
+
 
 def playMusic():
     os.system('open /System/Applications/Music.app')
 
+
 def openVk():
     os.system('open https://vk.com')
 
+
 def openYoutube():
     os.system('open https://youtube.com')    
+
+
+def speak(what):
+    print(what)
+    speakEngine.say(what)
+    speakEngine.runAndWait()
+    speakEngine.stop()
+
+
+def greeting():
+    speak("Hi! I'm glad to see you")
